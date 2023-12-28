@@ -7,7 +7,7 @@ import { IssueModalProps, IssueType } from './types'
 const buttonInfos: { name: string; value: IssueType }[] = [
   { name: '전체', value: 'all' },
   { name: 'open', value: 'open' },
-  { name: 'closed', value: 'close' }
+  { name: 'closed', value: 'closed' }
 ]
 
 export const IssueModal = ({

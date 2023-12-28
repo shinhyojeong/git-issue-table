@@ -4,7 +4,7 @@ export type TableProps<T extends string> = {
     key: T
     name: string
   }[]
-  contents: Record<T, string>[]
+  contents: Record<T, string | number>[]
 }
 
 export type StyledTHeaderProps = {

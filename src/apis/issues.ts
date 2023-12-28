@@ -1,11 +1,13 @@
 import { http } from '~/utils'
 
 export type SortType = 'created' | 'updated' | 'comments'
-export type IssueType = 'all' | 'open' | 'close'
+export type IssueType = 'all' | 'open' | 'closed'
 
 export type GetIssueReq = {
-  filter?: SortType
+  sort?: SortType
   state?: IssueType
+  per_page?: number
+  page: number
 }
 
 export type GetIssuesRes = {
