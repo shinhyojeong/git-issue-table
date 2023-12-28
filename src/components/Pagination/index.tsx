@@ -6,7 +6,8 @@ import { PaginationProps } from './types'
 export const Pagination = ({
   totalCount,
   perPage = 10,
-  rangeCount = 5
+  rangeCount = 5,
+  onChangePage
 }: PaginationProps) => {
   const [currentPage, setCurrentPage] = useState(0)
   const maxPage =
@@ -34,11 +35,12 @@ export const Pagination = ({
       nextPage = currentPage + 1
     }
 
-    setCurrentPage(nextPage)
+    handleChangePage(nextPage)
   }
 
   const handleChangePage = (page: number) => {
     setCurrentPage(page)
+    onChangePage?.(page)
   }
 
   return (

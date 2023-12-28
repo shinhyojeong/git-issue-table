@@ -63,7 +63,7 @@ type Issue = {
 export const Home = () => {
   const filterStateModal = useModal()
   const filterSortModal = useModal()
-  const [page, setPage] = useState(1)
+  const [page, setPage] = useState(0)
   const [issues, setIssues] = useState<Issue[]>([])
   const [filterOption, setFilterOption] = useState<FilterOption>({
     state: 'open',
@@ -85,12 +85,15 @@ export const Home = () => {
     filterSortModal.close()
   }
 
-  const fetchIssues = async (newFilterOption: FilterOption) => {
+  const fetchIssues = async (
+    newFilterOption: FilterOption,
+    newPage?: number
+  ) => {
     try {
       const res = await getIssues({
         ...newFilterOption,
         per_page: 10,
-        page
+        page: newPage ?? page
       })
 
       const newIssues = res.map(
@@ -114,8 +117,11 @@ export const Home = () => {
     fetchIssues(filterOption)
   }, [])
 
-  const handleChangePage = (page: number) => {
-    setPage(page)
+  const handleChangePage = async (newPage: number) => {
+    const nextPage = newPage + 1
+
+    setPage(nextPage)
+    await fetchIssues(filterOption, nextPage)
   }
 
   return (
