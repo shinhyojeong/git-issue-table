@@ -9,7 +9,9 @@
       "~/pages/*": ["pages/*"],
       "~/pages": ["pages"],
       "~/types/*": ["types/*"],
-      "~/types": ["types"]
+      "~/types": ["types"],
+      "~/hooks/*": ["hooks/*"],
+      "~/hooks": ["hooks"]
     }
   }
 }
