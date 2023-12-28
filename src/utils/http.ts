@@ -1,6 +1,6 @@
-import axios, { AxiosHeaders } from 'axios'
+import axios from 'axios'
 
-import type { AxiosResponse, InternalAxiosRequestConfig } from 'axios'
+import type { AxiosResponse } from 'axios'
 
 const BASE_URL = 'https://api.github.com/repos/facebook/react'
 
