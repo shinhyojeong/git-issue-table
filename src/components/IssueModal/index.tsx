@@ -1,13 +1,13 @@
-import { MouseEvent, useState } from 'react'
+import { useState } from 'react'
 import { Button } from '../Button'
 import { Modal } from '../Modal'
 import { Styled } from './styled'
 import { IssueModalProps, IssueType } from './types'
 
-const buttonInfos = [
+const buttonInfos: { name: string; value: IssueType }[] = [
   { name: '전체', value: 'all' },
   { name: 'open', value: 'open' },
-  { name: 'closed', value: 'closed' }
+  { name: 'closed', value: 'close' }
 ]
 
 export const IssueModal = ({
@@ -15,25 +15,26 @@ export const IssueModal = ({
   onClickApply,
   ...props
 }: IssueModalProps) => {
-  const [issueState, setIssueState] = useState<IssueType>('open')
+  const [issueState, setIssueState] = useState<IssueType>(currentIssue)
 
-  const handleChangeIssue = (e: MouseEvent<HTMLButtonElement>) => {
-    const newIssue = e.currentTarget.value as IssueType
-
-    setIssueState(newIssue)
+  const handleChangeIssue = (value: IssueType) => {
+    setIssueState(value)
+    console.log('value: ', value)
   }
 
   return (
     <Modal {...props}>
       <Styled.Title>이슈 상태</Styled.Title>
-      {buttonInfos.map(({ name, value }) => (
-        <Button
-          shape={currentIssue === value ? 'solid' : 'outline'}
-          value={value}
-          onClick={handleChangeIssue}>
-          {name}
-        </Button>
-      ))}
+      <Styled.ButtonsContainer>
+        {buttonInfos.map(({ name, value }) => (
+          <Button
+            shape={issueState === value ? 'solid' : 'outline'}
+            value={value}
+            onClick={() => handleChangeIssue(value)}>
+            {name}
+          </Button>
+        ))}
+      </Styled.ButtonsContainer>
       <Button
         shape="solid"
         width="100%"

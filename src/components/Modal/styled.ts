@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import { StyledContainerProps } from './types'
 
 const DIM = styled.div`
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
 
