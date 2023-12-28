@@ -1,6 +1,8 @@
 import { Styled } from './styled'
 import { TableProps } from './types'
 
+const TEXT_ALIGN_INIT = 'start'
+
 export const Table = <T extends string>({
   headers,
   contents
@@ -10,7 +12,9 @@ export const Table = <T extends string>({
       <thead>
         <Styled.Headers>
           {headers.map(({ key, name, textAlign }) => (
-            <Styled.THeader textAlign={textAlign} key={`th-${key}`}>
+            <Styled.THeader
+              textAlign={textAlign ?? TEXT_ALIGN_INIT}
+              key={`th-${key}`}>
               {name}
             </Styled.THeader>
           ))}
@@ -20,7 +24,9 @@ export const Table = <T extends string>({
         {contents.map((content, idx) => (
           <tr key={`content-${idx}`}>
             {headers.map(({ key, textAlign }) => (
-              <Styled.TData textAlign={textAlign} key={`td-${key}`}>
+              <Styled.TData
+                textAlign={textAlign ?? TEXT_ALIGN_INIT}
+                key={`td-${key}`}>
                 {content[key] || ''}
               </Styled.TData>
             ))}

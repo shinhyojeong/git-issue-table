@@ -1,6 +1,11 @@
 import { css } from '@emotion/react'
 
 export const fonts = {
+  title6B: css`
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+  `,
   title2B: css`
     font-size: 16px;
     font-weight: 700;

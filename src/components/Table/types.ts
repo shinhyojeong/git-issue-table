@@ -1,8 +1,6 @@
-export type TextAlignType = 'center' | 'start' | 'end'
-
 export type TableProps<T extends string> = {
   headers: {
-    textAlign: TextAlignType
+    textAlign?: string
     key: T
     name: string
   }[]
@@ -10,5 +8,5 @@ export type TableProps<T extends string> = {
 }
 
 export type StyledTHeaderProps = {
-  textAlign: TextAlignType
+  textAlign: string
 }
