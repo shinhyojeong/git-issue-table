@@ -1,7 +1,7 @@
-import { ReactNode } from 'react'
+import { ButtonHTMLAttributes, ReactNode } from 'react'
 import { StyledProps } from '~/types'
 
-export type ButtonProps = {
+export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: ReactNode
   shape?: 'outline' | 'solid' | 'transparent'
   radius?: number
