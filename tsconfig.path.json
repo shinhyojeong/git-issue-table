@@ -7,7 +7,9 @@
       "~/theme/*": ["theme/*"],
       "~/theme": ["theme"],
       "~/pages/*": ["pages/*"],
-      "~/pages": ["pages"]
+      "~/pages": ["pages"],
+      "~/types/*": ["types/*"],
+      "~/types": ["types"]
     }
   }
 }

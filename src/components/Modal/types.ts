@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { StyledProps } from '~/types'
 
 export type ModalProps = {
   width?: string
@@ -8,6 +9,4 @@ export type ModalProps = {
   onClose?: () => void
 }
 
-export type StyledContainerProps = Required<
-  Pick<ModalProps, 'width' | 'height'>
->
+export type StyledContainerProps = StyledProps<ModalProps, 'width' | 'height'>

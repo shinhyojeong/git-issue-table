@@ -1,4 +1,5 @@
 import { ColorKeys } from '~/theme/colors'
+import { StyledProps } from '~/types'
 
 export type IconProps = {
   type: string
@@ -6,4 +7,4 @@ export type IconProps = {
   size?: number
 }
 
-export type StyledIconProps = Required<Pick<IconProps, 'color' | 'size'>>
+export type StyledIconProps = StyledProps<IconProps, 'color' | 'size'>
