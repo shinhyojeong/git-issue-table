@@ -6,13 +6,17 @@ github api를 사용하여 IssueTable을 구성합니다.
 * 페이지네이션 기능 구현
 
 ## 실행 화면
-https://github.com/shinhyojeong/git-issue-table/assets/70738281/5ac54d42-ee43-40ee-9aa9-8fafe1046522
+https://github.com/shinhyojeong/git-issue-table/assets/70738281/ff358cfb-dd86-4263-9b73-f77e578661ae
 
 ## 프로젝트 시작
 ```
 yarn
-yarn dev
+yarn start
 ```
+
+
+
+
 
 
 
